@@ -27,9 +27,13 @@ const GlobalStyles = createGlobalStyle`
 
     body {
         font-family: "Space Mono", monospace;
-        font-size: 24px;
+        font-size: 16px;
         font-weight: 700;
         font-style: normal;
+        background-color: var(--blue-bg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     :root {
@@ -43,6 +47,7 @@ const GlobalStyles = createGlobalStyle`
         --light-grayish-cyan: hsl(185, 41%, 84%);
         --very-light-grayish-cyan: hsl(189, 41%, 97%);
         --white: hsl(0, 0%, 100%);
+        --blue-bg: hsl(173, 61%, 77%);
     }
 `;
 
