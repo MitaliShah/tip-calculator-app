@@ -11,6 +11,19 @@ export default function Form() {
   const [customTip, setCustomTip] = useState("");
   const [numOfPeople, setNumofPeople] = useState(0);
 
+  function formatTip(str) {
+    let string = str;
+    string = string.substring(0, string.length - 1);
+    console.log(`Formated string is `, string);
+  }
+  formatTip(selectedTip);
+  const tipType = customTip ? customTip : selectedTip;
+  console.log(tipType);
+  const tipPerPerson = (billAmount * (tipType / 100)) / numOfPeople;
+  const totalPerPerson = (billAmount * (1 + selectedTip / 100)) / numOfPeople;
+
+  console.log(tipPerPerson);
+  console.log(totalPerPerson);
   return (
     <FormWrapper
       onSubmit={(event) => {
