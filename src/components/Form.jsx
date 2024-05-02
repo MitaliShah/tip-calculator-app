@@ -1,11 +1,14 @@
 import { useState } from "react";
 import iconDollar from "./../../public/images/icon-dollar.svg";
+import iconPerson from "./../../public/images/icon-person.svg";
 import styled from "styled-components";
 import SelectTip from "./SelectTip";
 
 export default function Form() {
   const [billAmount, setBillAmount] = useState(0);
   const [selectedTip, setSelectedTip] = useState("");
+  const [customTip, setCustomTip] = useState("");
+  const [numOfPeople, setNumofPeople] = useState(0);
 
   return (
     <FormWrapper
@@ -15,7 +18,7 @@ export default function Form() {
     >
       <InputLabel htmlFor="bill">Bill</InputLabel>
 
-      <InputContainer>
+      <InputBillContainer>
         <IMG src={iconDollar} alt="" />
         <BillInput
           id="bill"
@@ -25,8 +28,27 @@ export default function Form() {
             setBillAmount(event.target.value);
           }}
         />
-      </InputContainer>
-      <SelectTip selectedTip={selectedTip} setSelectedTip={setSelectedTip} />
+      </InputBillContainer>
+      <SelectTip
+        selectedTip={selectedTip}
+        setSelectedTip={setSelectedTip}
+        customTip={customTip}
+        setCustomTip={setCustomTip}
+      />
+      <div>
+        <InputLabel htmlFor="num-of-people">Number of People</InputLabel>
+        <InputBillContainer>
+          <IMG src={iconPerson} alt="" />
+          <BillInput
+            id="num-of=people"
+            value={numOfPeople}
+            type="number"
+            onChange={(event) => {
+              setNumofPeople(event.target.value);
+            }}
+          />
+        </InputBillContainer>
+      </div>
     </FormWrapper>
   );
 }
@@ -37,7 +59,7 @@ const FormWrapper = styled.form`
   background-color: var(--white);
 `;
 
-const InputContainer = styled.div`
+const InputBillContainer = styled.div`
   display: flex;
   justify-content: space-between;
   flex: 1;

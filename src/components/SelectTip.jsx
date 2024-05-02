@@ -1,30 +1,55 @@
+import { useState } from "react";
 import styled from "styled-components";
 
-export default function SelectTip({ selectedTip, setSelectedTip }) {
+export default function SelectTip({
+  selectedTip,
+  setSelectedTip,
+  customTip,
+  setCustomTip,
+}) {
+  const [showCustom, setShowCustom] = useState(false);
+  console.log(customTip);
+  function handleCustom() {
+    setShowCustom(!showCustom);
+    console.log(showCustom);
+  }
   return (
     <Fieldset>
       <Lagend>Select Tip</Lagend>
       <Wrapper>
-        {TIP_PERCENTAGES.map((option) => {
-          return (
-            <InputWrapper key={option} value={option}>
-              <input
-                className="visually-hidden"
-                type="radio"
-                name="selected-tip"
-                id={`agreed-${option}`}
-                value={option}
-                checked={option === selectedTip}
-                onChange={(event) => {
-                  setSelectedTip(event.target.value);
-                }}
-              />
-              <Label htmlFor={`agreed-${option}`} value={option}>
-                {option}
-              </Label>
-            </InputWrapper>
-          );
-        })}
+        <InputWrapper>
+          {TIP_PERCENTAGES.map((option) => {
+            return (
+              <div key={option}>
+                <input
+                  className="visually-hidden"
+                  type="radio"
+                  name="selected-tip"
+                  id={`agreed-${option}`}
+                  value={option}
+                  checked={option === selectedTip}
+                  onChange={(event) => {
+                    setSelectedTip(event.target.value);
+                  }}
+                />
+
+                <Label htmlFor={`agreed-${option}`} value={option}>
+                  {option}
+                </Label>
+              </div>
+            );
+          })}
+          {showCustom ? (
+            <InputCustom
+              type="number"
+              id="custom"
+              value={customTip}
+              onChange={(e) => setCustomTip(e.target.value)}
+            />
+          ) : (
+            <CustomSpan onClick={handleCustom}>Custom</CustomSpan>
+          )}
+        </InputWrapper>
       </Wrapper>
     </Fieldset>
   );
@@ -36,6 +61,26 @@ const Fieldset = styled.fieldset`
   margin: 0;
 `;
 const Wrapper = styled.div`
+  /* display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 16px;
+
+  grid-template-areas:
+    "one two"
+    "three four"
+    "five six"; */
+`;
+
+const Lagend = styled.legend`
+  color: var(--dark-grayish-cyan);
+`;
+
+const InputWrapper = styled.div`
+  /* margin: 0;
+  padding: 0;
+  background-color: green; */
+
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -45,16 +90,6 @@ const Wrapper = styled.div`
     "one two"
     "three four"
     "five six";
-`;
-
-const Lagend = styled.legend`
-  color: var(--dark-grayish-cyan);
-`;
-
-const InputWrapper = styled.div`
-  margin: 0;
-  padding: 0;
-  background-color: green;
 `;
 
 const Label = styled.label`
@@ -90,6 +125,26 @@ const Label = styled.label`
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 24px;
+  padding: 6px 16px;
 `;
 
-const TIP_PERCENTAGES = ["5%", "10%", "15%", "25%", "50%", "custom"];
+const CustomSpan = styled.span`
+  background-color: var(--custom-bg);
+  color: var(--custom-col);
+  text-align: center;
+  font-size: 24px;
+  padding: 6px 16px;
+`;
+
+const InputCustom = styled.input`
+  width: 146px;
+  max-width: 146px;
+  font-size: 24px;
+  background-color: var(--custom-bg);
+  color: var(--very-dark-cyan);
+  border: none;
+  text-align: right;
+`;
+
+const TIP_PERCENTAGES = ["5%", "10%", "15%", "25%", "50%"];
