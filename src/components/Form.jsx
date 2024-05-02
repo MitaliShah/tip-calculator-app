@@ -3,6 +3,7 @@ import iconDollar from "./../../public/images/icon-dollar.svg";
 import iconPerson from "./../../public/images/icon-person.svg";
 import styled from "styled-components";
 import SelectTip from "./SelectTip";
+import Results from "./Results";
 
 export default function Form() {
   const [billAmount, setBillAmount] = useState(0);
@@ -35,20 +36,19 @@ export default function Form() {
         customTip={customTip}
         setCustomTip={setCustomTip}
       />
-      <div>
-        <InputLabel htmlFor="num-of-people">Number of People</InputLabel>
-        <InputBillContainer>
-          <IMG src={iconPerson} alt="" />
-          <BillInput
-            id="num-of=people"
-            value={numOfPeople}
-            type="number"
-            onChange={(event) => {
-              setNumofPeople(event.target.value);
-            }}
-          />
-        </InputBillContainer>
-      </div>
+      <InputLabel htmlFor="num-of-people">Number of People</InputLabel>
+      <InputBillContainer>
+        <IMG src={iconPerson} alt="" />
+        <BillInput
+          id="num-of=people"
+          value={numOfPeople}
+          type="number"
+          onChange={(event) => {
+            setNumofPeople(event.target.value);
+          }}
+        />
+      </InputBillContainer>
+      <Results />
     </FormWrapper>
   );
 }
@@ -62,11 +62,13 @@ const FormWrapper = styled.form`
 const InputBillContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex: 1;
   max-width: 19.43rem;
   font-size: 1.5rem;
-  padding: 15px 20px;
+  padding: 10px 20px;
   background-color: var(--light-grayish-cyan);
+  margin-top: 6px;
 `;
 
 const BillInput = styled.input`
@@ -83,6 +85,6 @@ const InputLabel = styled.label`
 `;
 
 const IMG = styled.img`
-  width: 9.84;
-  height: 15.46;
+  width: 13px;
+  height: 16px;
 `;

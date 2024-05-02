@@ -16,41 +16,40 @@ export default function SelectTip({
   return (
     <Fieldset>
       <Lagend>Select Tip</Lagend>
-      <Wrapper>
-        <InputWrapper>
-          {TIP_PERCENTAGES.map((option) => {
-            return (
-              <div key={option}>
-                <input
-                  className="visually-hidden"
-                  type="radio"
-                  name="selected-tip"
-                  id={`agreed-${option}`}
-                  value={option}
-                  checked={option === selectedTip}
-                  onChange={(event) => {
-                    setSelectedTip(event.target.value);
-                  }}
-                />
 
-                <Label htmlFor={`agreed-${option}`} value={option}>
-                  {option}
-                </Label>
-              </div>
-            );
-          })}
-          {showCustom ? (
-            <InputCustom
-              type="number"
-              id="custom"
-              value={customTip}
-              onChange={(e) => setCustomTip(e.target.value)}
-            />
-          ) : (
-            <CustomSpan onClick={handleCustom}>Custom</CustomSpan>
-          )}
-        </InputWrapper>
-      </Wrapper>
+      <InputWrapper>
+        {TIP_PERCENTAGES.map((option) => {
+          return (
+            <div key={option}>
+              <input
+                className="visually-hidden"
+                type="radio"
+                name="selected-tip"
+                id={`agreed-${option}`}
+                value={option}
+                checked={option === selectedTip}
+                onChange={(event) => {
+                  setSelectedTip(event.target.value);
+                }}
+              />
+
+              <Label htmlFor={`agreed-${option}`} value={option}>
+                {option}
+              </Label>
+            </div>
+          );
+        })}
+        {showCustom ? (
+          <InputCustom
+            type="number"
+            id="custom"
+            value={customTip}
+            onChange={(e) => setCustomTip(e.target.value)}
+          />
+        ) : (
+          <CustomSpan onClick={handleCustom}>Custom</CustomSpan>
+        )}
+      </InputWrapper>
     </Fieldset>
   );
 }
@@ -58,18 +57,7 @@ export default function SelectTip({
 const Fieldset = styled.fieldset`
   border: none;
   padding: 0;
-  margin: 0;
-`;
-const Wrapper = styled.div`
-  /* display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 16px;
-
-  grid-template-areas:
-    "one two"
-    "three four"
-    "five six"; */
+  margin: 32px 0;
 `;
 
 const Lagend = styled.legend`
@@ -77,10 +65,6 @@ const Lagend = styled.legend`
 `;
 
 const InputWrapper = styled.div`
-  /* margin: 0;
-  padding: 0;
-  background-color: green; */
-
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -90,6 +74,8 @@ const InputWrapper = styled.div`
     "one two"
     "three four"
     "five six";
+
+  margin-top: 16px;
 `;
 
 const Label = styled.label`
