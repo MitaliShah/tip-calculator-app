@@ -1,9 +1,11 @@
 import { useState } from "react";
 import iconDollar from "./../../public/images/icon-dollar.svg";
 import styled from "styled-components";
+import SelectTip from "./SelectTip";
 
 export default function Form() {
   const [billAmount, setBillAmount] = useState(0);
+  const [selectedTip, setSelectedTip] = useState("");
 
   return (
     <FormWrapper
@@ -24,6 +26,7 @@ export default function Form() {
           }}
         />
       </InputContainer>
+      <SelectTip selectedTip={selectedTip} setSelectedTip={setSelectedTip} />
     </FormWrapper>
   );
 }

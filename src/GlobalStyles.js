@@ -48,6 +48,19 @@ const GlobalStyles = createGlobalStyle`
         --very-light-grayish-cyan: hsl(189, 41%, 97%);
         --white: hsl(0, 0%, 100%);
         --blue-bg: hsl(173, 61%, 77%);
+        --custom-bg: hsl(185,38%,95%);
+        --custom-col: hsl(180, 18%, 40%);
+    }
+
+    .visually-hidden {
+        position: absolute;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        width: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
     }
 `;
 
