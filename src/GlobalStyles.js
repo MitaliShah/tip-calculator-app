@@ -51,6 +51,7 @@ const GlobalStyles = createGlobalStyle`
         --custom-bg: hsl(185,38%,95%);
         --custom-col: hsl(180, 18%, 40%);
         --input-bg: hsl(185, 38%, 97%);
+        --errorLabelCol: hsl(13,70%,61%);
     }
 
     .visually-hidden {

@@ -76,6 +76,13 @@ const InputWrapper = styled.div`
     "five six";
 
   margin-top: 16px;
+
+  @media (min-width: 920px) {
+    max-width: 920px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 14px;
+  }
 `;
 
 const Label = styled.label`
@@ -114,6 +121,10 @@ const Label = styled.label`
   font-size: 24px;
   padding: 6px 16px;
   border-radius: 4px;
+
+  @media (min-width: 920px) {
+    padding: 6px 25px;
+  }
 `;
 
 const CustomSpan = styled.span`
@@ -123,6 +134,10 @@ const CustomSpan = styled.span`
   font-size: 24px;
   padding: 6px 16px;
   border-radius: 4px;
+
+  @media (min-width: 920px) {
+    padding: 6px 14px;
+  }
 `;
 
 const InputCustom = styled.input`
@@ -136,6 +151,10 @@ const InputCustom = styled.input`
   border-radius: 4px;
   border: 3px solid var(--strong-cyan);
   outline: none;
+
+  @media (min-width: 920px) {
+    width: 118px;
+  }
 `;
 
 const TIP_PERCENTAGES = ["5%", "10%", "15%", "25%", "50%"];

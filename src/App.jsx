@@ -7,9 +7,7 @@ function App() {
   return (
     <Main>
       <Header />
-      <main>
-        <Form />
-      </main>
+      <Form />
       <GlobalStyles />
     </Main>
   );
@@ -19,4 +17,8 @@ export default App;
 
 const Main = styled.main`
   max-width: 23.438rem;
+
+  @media (min-width: 920px) {
+    max-width: 920px;
+  }
 `;
