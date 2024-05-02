@@ -50,6 +50,7 @@ const GlobalStyles = createGlobalStyle`
         --blue-bg: hsl(173, 61%, 77%);
         --custom-bg: hsl(185,38%,95%);
         --custom-col: hsl(180, 18%, 40%);
+        --input-bg: hsl(185, 38%, 97%);
     }
 
     .visually-hidden {

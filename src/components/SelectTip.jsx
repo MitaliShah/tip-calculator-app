@@ -113,6 +113,7 @@ const Label = styled.label`
   align-items: center;
   font-size: 24px;
   padding: 6px 16px;
+  border-radius: 4px;
 `;
 
 const CustomSpan = styled.span`
@@ -121,6 +122,7 @@ const CustomSpan = styled.span`
   text-align: center;
   font-size: 24px;
   padding: 6px 16px;
+  border-radius: 4px;
 `;
 
 const InputCustom = styled.input`
@@ -131,6 +133,9 @@ const InputCustom = styled.input`
   color: var(--very-dark-cyan);
   border: none;
   text-align: right;
+  border-radius: 4px;
+  border: 3px solid var(--strong-cyan);
+  outline: none;
 `;
 
 const TIP_PERCENTAGES = ["5%", "10%", "15%", "25%", "50%"];
