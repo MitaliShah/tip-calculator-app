@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import iconDollar from "./../../public/images/icon-dollar.svg";
 import iconPerson from "./../../public/images/icon-person.svg";
 import styled from "styled-components";
@@ -11,6 +11,14 @@ export default function Form() {
   const [customTip, setCustomTip] = useState(0);
   const [numOfPeople, setNumofPeople] = useState(0);
   const [touched, setTouched] = useState(false);
+
+  const billinputRef = useRef(null);
+  const numOfPeopleinputRef = useRef(null);
+
+  // useEffect(() => {
+  //   const input = inputRef.current;
+  //   input.select();
+  // }, []);
 
   function handleReset() {
     setBillAmount(0);
@@ -44,7 +52,8 @@ export default function Form() {
   ).toFixed(2);
 
   const showError =
-    touched && numOfPeople === 0 ? (
+    touched &&
+    (numOfPeople === 0 || numOfPeople === "" || Number(numOfPeople) <= 0) ? (
       <ErrorMessage id="errorLabel">Can't be zero</ErrorMessage>
     ) : null;
 
@@ -67,6 +76,12 @@ export default function Form() {
             aria-label="Bill"
             onChange={(event) => {
               setBillAmount(event.target.value);
+            }}
+            ref={billinputRef}
+            onClick={() => {
+              if (billinputRef.current) {
+                billinputRef.current.select();
+              }
             }}
           />
         </InputContainer>
@@ -95,6 +110,12 @@ export default function Form() {
             aria-describedby={
               touched && numOfPeople === 0 ? "errorLabel" : null
             }
+            ref={numOfPeopleinputRef}
+            onClick={() => {
+              if (numOfPeopleinputRef.current) {
+                numOfPeopleinputRef.current.select();
+              }
+            }}
           />
         </InputContainer>
       </Wrapper>
@@ -126,6 +147,7 @@ const FormWrapper = styled.form`
     display: flex;
     flex-direction: row;
     width: 100%;
+    border-radius: 20px;
   }
 `;
 
