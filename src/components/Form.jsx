@@ -45,9 +45,7 @@ export default function Form() {
 
   const showError =
     touched && numOfPeople === 0 ? (
-      <span id="errorLabel" style={{ color: "red", display: "block" }}>
-        Can't be zero
-      </span>
+      <ErrorMessage id="errorLabel">Can't be zero</ErrorMessage>
     ) : null;
 
   return (
@@ -83,7 +81,7 @@ export default function Form() {
           {showError}
         </ErrorMessage>
 
-        <InputContainer>
+        <InputContainer className={showError && "error"}>
           <IMG src={iconPerson} alt="" />
           <Input
             id="num-of=people"
@@ -105,6 +103,7 @@ export default function Form() {
         tipPerPerson={tipPerPerson}
         totalPerPerson={totalPerPerson}
         handleReset={handleReset}
+        billAmount={billAmount}
       />
     </FormWrapper>
   );
@@ -167,6 +166,13 @@ const IMG = styled.img`
 
 const ErrorMessage = styled.div`
   color: var(--errorLabelCol);
-  display: block;
+  /* display: block; */
   font-size: 16px;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 920px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `;

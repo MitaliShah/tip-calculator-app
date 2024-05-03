@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
-export default function Results({ tipPerPerson, totalPerPerson, handleReset }) {
+export default function Results({
+  tipPerPerson,
+  totalPerPerson,
+  handleReset,
+  billAmount,
+}) {
   return (
     <Wrapper>
       <ContainerTipAmount>
@@ -24,7 +29,9 @@ export default function Results({ tipPerPerson, totalPerPerson, handleReset }) {
         </Output>
       </ContainerTotalAmount>
 
-      <Reset onClick={handleReset}>RESET</Reset>
+      <Reset onClick={handleReset} disabled={billAmount === 0}>
+        RESET
+      </Reset>
     </Wrapper>
   );
 }
@@ -33,10 +40,10 @@ const Wrapper = styled.div`
   background-color: var(--very-dark-cyan);
   padding: 37px 24px 24px;
   margin-top: 32px;
+  border-radius: 20px;
 
   @media (min-width: 920px) {
     padding: 40px;
-    /* width: 413px; */
     flex: 1;
     margin-top: 0;
   }
@@ -75,6 +82,14 @@ const Reset = styled.button`
   font-size: 20px;
   color: var(--very-dark-cyan);
   margin-top: 32px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+
+  &:focus {
+    outline: none;
+    background-color: var(--blue-bg);
+  }
 
   @media (min-width: 920px) {
     margin-top: 155px;

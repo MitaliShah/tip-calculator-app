@@ -64,6 +64,10 @@ const GlobalStyles = createGlobalStyle`
         padding: 0;
         border: 0;
     }
+
+    .error {
+        border: 4px solid var(--errorLabelCol);
+    }
 `;
 
 export default GlobalStyles;
