@@ -112,8 +112,9 @@ export default function Form() {
 
 const Wrapper = styled.div`
   @media (min-width: 920px) {
-    padding: 45px;
-    width: 379px;
+    padding: 45px 48px;
+    /* width: 379px; */
+    flex: 1;
   }
 `;
 
@@ -125,6 +126,7 @@ const FormWrapper = styled.form`
   @media (min-width: 920px) {
     display: flex;
     flex-direction: row;
+    width: 100%;
   }
 `;
 
@@ -139,6 +141,10 @@ const InputContainer = styled.div`
   background-color: var(--input-bg);
   margin-top: 6px;
   border-radius: 6px;
+
+  @media (min-width: 920px) {
+    max-width: 379px;
+  }
 `;
 
 const Input = styled.input`

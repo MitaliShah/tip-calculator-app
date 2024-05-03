@@ -23,6 +23,7 @@ export default function Results({ tipPerPerson, totalPerPerson, handleReset }) {
           {tipPerPerson > 0 ? totalPerPerson : `$0.00`}
         </Output>
       </ContainerTotalAmount>
+
       <Reset onClick={handleReset}>RESET</Reset>
     </Wrapper>
   );
@@ -35,7 +36,9 @@ const Wrapper = styled.div`
 
   @media (min-width: 920px) {
     padding: 40px;
-    width: 413px;
+    /* width: 413px; */
+    flex: 1;
+    margin-top: 0;
   }
 `;
 
@@ -50,12 +53,20 @@ const Label = styled.label`
 const ContainerTipAmount = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media (min-width: 920px) {
+    margin-top: 40px;
+  }
 `;
 
 const ContainerTotalAmount = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+
+  @media (min-width: 920px) {
+    margin-top: 40px;
+  }
 `;
 
 const Reset = styled.button`
@@ -64,6 +75,10 @@ const Reset = styled.button`
   font-size: 20px;
   color: var(--very-dark-cyan);
   margin-top: 32px;
+
+  @media (min-width: 920px) {
+    margin-top: 155px;
+  }
 `;
 
 const Output = styled.output`

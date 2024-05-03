@@ -58,6 +58,7 @@ const Fieldset = styled.fieldset`
   border: none;
   padding: 0;
   margin: 32px 0;
+  width: 100%;
 `;
 
 const Lagend = styled.legend`
