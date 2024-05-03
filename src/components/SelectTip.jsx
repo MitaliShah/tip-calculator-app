@@ -38,7 +38,7 @@ export default function SelectTip({
               <Label
                 htmlFor={`agreed-${option}`}
                 value={option}
-                active={(option === selectedTip && labelActive).toString()}
+                $active={(option === selectedTip && labelActive).toString()}
               >
                 {option}
               </Label>
@@ -96,12 +96,17 @@ const Label = styled.label`
   background-color: var(--very-dark-cyan);
   color: var(--white);
 
-  ${({ active }) =>
-    active === "true" &&
+  ${({ $active }) =>
+    $active === "true" &&
     `
     background-color: var(--strong-cyan);
     color: var(--very-dark-cyan);
   `}
+
+  &:hover {
+    background-color: var(--blue-bg);
+    color: var(--very-dark-cyan);
+  }
 
   grid-area: ${(props) =>
     props.value === "5%"

@@ -15,11 +15,6 @@ export default function Form() {
   const billinputRef = useRef(null);
   const numOfPeopleinputRef = useRef(null);
 
-  // useEffect(() => {
-  //   const input = inputRef.current;
-  //   input.select();
-  // }, []);
-
   function handleReset() {
     setBillAmount(0);
     setSelectedTip("");
@@ -163,6 +158,10 @@ const InputContainer = styled.div`
   margin-top: 6px;
   border-radius: 6px;
 
+  &:focus-within {
+    border: 4px solid var(--strong-cyan);
+  }
+
   @media (min-width: 920px) {
     max-width: 379px;
   }
@@ -188,7 +187,6 @@ const IMG = styled.img`
 
 const ErrorMessage = styled.div`
   color: var(--errorLabelCol);
-  /* display: block; */
   font-size: 16px;
   display: flex;
   flex-direction: column;
