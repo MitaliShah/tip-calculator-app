@@ -8,7 +8,8 @@ export default function SelectTip({
   setCustomTip,
 }) {
   const [showCustom, setShowCustom] = useState(false);
-  console.log(customTip);
+  const [labelActive, setLabelActive] = useState(false);
+
   function handleCustom() {
     setShowCustom(!showCustom);
     console.log(showCustom);
@@ -30,10 +31,15 @@ export default function SelectTip({
                 checked={option === selectedTip}
                 onChange={(event) => {
                   setSelectedTip(event.target.value);
+                  setLabelActive(true);
                 }}
               />
 
-              <Label htmlFor={`agreed-${option}`} value={option}>
+              <Label
+                htmlFor={`agreed-${option}`}
+                value={option}
+                active={(option === selectedTip && labelActive).toString()}
+              >
                 {option}
               </Label>
             </div>
@@ -87,19 +93,15 @@ const InputWrapper = styled.div`
 `;
 
 const Label = styled.label`
-  background-color: ${(props) =>
-    props.value === "15%"
-      ? "var(--strong-cyan)"
-      : props.value === "custom"
-      ? "var(--custom-bg)"
-      : "var(--very-dark-cyan)"};
+  background-color: var(--very-dark-cyan);
+  color: var(--white);
 
-  color: ${(props) =>
-    props.value === "15%"
-      ? "var(--very-dark-cyan)"
-      : props.value === "custom"
-      ? "var(--custom-col)"
-      : "var(--white)"};
+  ${({ active }) =>
+    active === "true" &&
+    `
+    background-color: var(--strong-cyan);
+    color: var(--very-dark-cyan);
+  `}
 
   grid-area: ${(props) =>
     props.value === "5%"
