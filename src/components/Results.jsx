@@ -102,5 +102,5 @@ const Output = styled.output`
 
 const Small = styled.small`
   font-size: 13px;
-  color: var(--grayish-cyan);
+  color: hsl(0, 0%, 72%);
 `;

@@ -94,7 +94,7 @@ export default function Form() {
         <InputContainer className={showError && "error"}>
           <IMG src={iconPerson} alt="" />
           <Input
-            id="num-of=people"
+            id="num-of-people"
             value={numOfPeople}
             type="number"
             onChange={(event) => {
