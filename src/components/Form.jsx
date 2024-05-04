@@ -20,6 +20,7 @@ export default function Form() {
     setSelectedTip("");
     setCustomTip(0);
     setNumofPeople(0);
+    setTouched(false);
   }
 
   function formatTip(str) {
