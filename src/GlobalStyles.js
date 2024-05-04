@@ -27,7 +27,7 @@ const GlobalStyles = createGlobalStyle`
 
     body {
         font-family: "Space Mono", monospace;
-        font-size: 16px;
+        font-size: 1rem;
         font-weight: 700;
         font-style: normal;
         background-color: var(--blue-bg);

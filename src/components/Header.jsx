@@ -2,9 +2,9 @@ import logo from "../../public/images/logo.svg";
 import styled from "styled-components";
 
 export default function Header() {
-  return(
+  return (
     <>
-    <h1 className="visually-hidden">Spliter</h1>
+      <h1 className="visually-hidden">Spliter</h1>
       <LOGO src={logo} alt="logo" />
     </>
   );
@@ -12,4 +12,5 @@ export default function Header() {
 
 const LOGO = styled.img`
   margin: 0 auto;
+  margin-top: 2rem;
 `;

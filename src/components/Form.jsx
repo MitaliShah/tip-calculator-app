@@ -128,7 +128,6 @@ export default function Form() {
 const Wrapper = styled.div`
   @media (min-width: 920px) {
     padding: 45px 48px;
-    /* width: 379px; */
     flex: 1;
   }
 `;
@@ -187,7 +186,7 @@ const IMG = styled.img`
 
 const ErrorMessage = styled.div`
   color: var(--errorLabelCol);
-  font-size: 16px;
+  font-size: 1rem;
   display: flex;
   flex-direction: column;
 

@@ -126,7 +126,7 @@ const Label = styled.label`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 24px;
+  font-size: 1.5rem;
   padding: 6px 16px;
   border-radius: 4px;
 
@@ -139,7 +139,7 @@ const CustomSpan = styled.span`
   background-color: var(--custom-bg);
   color: var(--custom-col);
   text-align: center;
-  font-size: 24px;
+  font-size: 1.5rem;
   padding: 6px 16px;
   border-radius: 4px;
 

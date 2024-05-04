@@ -79,7 +79,7 @@ const ContainerTotalAmount = styled.div`
 const Reset = styled.button`
   width: 100%;
   background-color: var(--strong-cyan);
-  font-size: 20px;
+  font-size: 1.25rem;
   color: var(--very-dark-cyan);
   margin-top: 32px;
   border: none;
@@ -97,10 +97,10 @@ const Reset = styled.button`
 `;
 
 const Output = styled.output`
-  font-size: 32px;
+  font-size: 2rem;
 `;
 
 const Small = styled.small`
-  font-size: 13px;
+  font-size: 0.81rem;
   color: hsl(0, 0%, 72%);
 `;
