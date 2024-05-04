@@ -86,6 +86,9 @@ const Reset = styled.button`
   cursor: pointer;
   outline: none;
 
+  cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
+  opacity: ${(props) => (props.disabled ? "0.5" : "1")};
+
   &:focus {
     outline: none;
     background-color: var(--blue-bg);
@@ -98,6 +101,7 @@ const Reset = styled.button`
 
 const Output = styled.output`
   font-size: 2rem;
+  color: var(--strong-cyan);
 `;
 
 const Small = styled.small`
