@@ -30,7 +30,7 @@ const GlobalStyles = createGlobalStyle`
         font-size: 1rem;
         font-weight: 700;
         font-style: normal;
-        background-color: var(--blue-bg);
+        background-color: var(--light-grayish-cyan);
         display: flex;
         justify-content: center;
         align-items: center;
