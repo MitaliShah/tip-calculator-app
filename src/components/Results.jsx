@@ -29,7 +29,7 @@ export default function Results({
         </Output>
       </ContainerTotalAmount>
 
-      <Reset onClick={handleReset} disabled={billAmount === 0}>
+      <Reset type="reset" onClick={handleReset} disabled={billAmount === 0}>
         RESET
       </Reset>
     </Wrapper>

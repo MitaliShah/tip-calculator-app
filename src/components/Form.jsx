@@ -112,11 +112,6 @@ export default function Form() {
                 numOfPeopleinputRef.current.select();
               }
             }}
-            onKeyDown={(event) => {
-              if (event.key === "Enter") {
-                event.preventDefault();
-              }
-            }}
           />
         </InputContainer>
       </Wrapper>
